@@ -2,20 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define default theme using CSS variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: theme('colors.light');
+  --color-text: theme('colors.dark');
+  --color-border: theme('colors.dark');
+  --color-hover-bg: theme('colors.dark');
+  --color-hover-text: theme('colors.dark');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Override variables when dark mode is active */
+.dark {
+  --color-bg: theme('colors.dark');
+  --color-text: theme('colors.light');
+  --color-border: theme('colors.light');
+  --color-hover-bg: theme('colors.light');
+  --color-hover-text: theme('colors.light');
 }
 
+/* Apply theme variables */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Replace direct `@apply` usage with CSS variables */
+.border-dark {
+  border-color: var(--color-border);
+}
+
+.hover\:bg-dark:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.hover\:text-dark:hover {
+  color: var(--color-hover-text);
 }
