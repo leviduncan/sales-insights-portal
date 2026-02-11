@@ -5,7 +5,7 @@ import Filters from "@/components/Filters";
 import SalesChart from "@/components/SalesChart";
 import TopProductChart from "@/components/TopProductChart";
 import SalesByRegion from "@/components/SalesByRegion";
-import SalesByProduct from "@/components/SalesByProduct"; 
+import SalesByProduct from "@/components/SalesByProduct";
 import UnitsSoldOverTime from "@/components/UnitsSoldOverTime";
 import SalesVsProfit from "@/components/SalesVsProfit";
 import COGSVS from "@/components/COGSVS";
@@ -54,10 +54,10 @@ export default function FinancialDashboard() {
   return (
     <div className="min-h-screen bg-gray-100 text-dark dark:bg-dark dark:text-light">
       <Navbar />
-      <div className="max-w-6xl mx-auto p-5">
-        <Filters 
-          data={data} 
-          selectedRegion={selectedRegion} 
+      <div className="max-w-8x1 mx-auto p-5">
+        <Filters
+          data={data}
+          selectedRegion={selectedRegion}
           setSelectedRegion={setSelectedRegion}
           startDate={startDate}
           setStartDate={setStartDate}
@@ -66,14 +66,16 @@ export default function FinancialDashboard() {
           minDate={minDate}
           maxDate={maxDate}
         />
-        <TotalIncomeCard data={filteredData} />
-        <TotalProfitCard data={filteredData} />
-        <TopProductsCard data={filteredData} />
-        <SalesChart data={filteredData.map(item => ({ ...item, Sales: item["Sales"], MonthName: item["Month Name"] }))} selectedRegion={selectedRegion} />
-        <TopProductChart data={filteredData.map(item => ({ ...item, Product: item["Product"], Sales: item["Sales"]}))} />
+        <div className="grid grid-cols-5 grid-rows-5 gap-4">
+          <TotalIncomeCard data={filteredData} />
+          <TotalProfitCard data={filteredData} />
+          <SalesByProduct data={filteredData} />
+          <ProfitByProduct data={filteredData} />
+          <SalesChart data={filteredData.map(item => ({ ...item, Sales: item["Sales"], MonthName: item["Month Name"] }))} selectedRegion={selectedRegion} />
+          <TopProductsCard data={filteredData} />
+        </div>
+        <TopProductChart data={filteredData.map(item => ({ ...item, Product: item["Product"], Sales: item["Sales"] }))} />
         <SalesByRegion data={filteredData} />
-        <SalesByProduct data={filteredData} />
-        <ProfitByProduct data={filteredData} />
         <UnitsSoldOverTime data={filteredData} />
         <SalesVsProfit data={filteredData} />
         <COGSVS data={filteredData} />

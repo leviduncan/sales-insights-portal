@@ -42,7 +42,7 @@ export default function SalesChart({ data }: SalesChartProps) {
   console.log("Chart Data:", chartData);
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
+    <div className="col-span-2 row-span-2 col-start-1 row-start-2 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
       <Line data={chartData} />
     </div>
   );

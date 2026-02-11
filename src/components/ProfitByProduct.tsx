@@ -48,7 +48,7 @@ function ProfitByProduct({ data }: ProfitByProductProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
+  return <div className="col-start-3 row-start-3 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
     <Bar data={chartData} />
   </div>;
 }

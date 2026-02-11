@@ -1,25 +1,16 @@
-import fs from "fs";
-import path from "path";
+import type { NextApiRequest, NextApiResponse } from "next";
+import data from "@/financial-data.json";
 
-export default async function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    
-    const filePath = path.join(__dirname, "../../../../public", "financial-data.json");
-    if (!fs.existsSync(filePath)) {
+    if (!Array.isArray(data)) {
+      console.error("Error: Expected an array but got:", data);
       return res.status(500).json([]);
     }
 
-    const jsonData = JSON.parse(fs.readFileSync(filePath, "utf8"));
-
-    if (!Array.isArray(jsonData)) {
-      console.error("Error: Expected an array but got:", jsonData);
-      return res.status(500).json([]);
-    }
-
-    res.status(200).json(jsonData);
+    return res.status(200).json(data);
   } catch (error) {
     console.error("API Error:", error);
-    res.status(500).json([]);
+    return res.status(500).json([]);
   }
 }
-

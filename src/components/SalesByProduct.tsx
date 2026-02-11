@@ -30,5 +30,5 @@ export default function SalesByProduct({ data }: SalesByProductProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Pie data={chartData} /></div>;
+  return <div className="row-span-2 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Pie data={chartData} /></div>;
 }
