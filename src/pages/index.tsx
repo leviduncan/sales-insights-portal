@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FinancialRecord } from "@/types/financial";
-import '@/app/globals.css'
 import Navbar from "@/components/Navbar";
 import Filters from "@/components/Filters";
 import SalesChart from "@/components/SalesChart";
