@@ -2,7 +2,7 @@ name: Deploy Next.js SSR via SCP + systemd
 
 on:
   push:
-    branches: [main]
+    branches: [radian-proof]
 
 jobs:
   build-and-deploy:
