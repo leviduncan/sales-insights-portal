@@ -28,12 +28,13 @@ jobs:
         run: |
           rm -rf deploy
           mkdir -p deploy
+          # Standalone runtime (contains server.js and its minimal node_modules)
           cp -r .next/standalone/* deploy/
+          # Static assets required at runtime
           mkdir -p deploy/.next
           cp -r .next/static deploy/.next/static
+          # Public folder
           cp -r public deploy/public
-          cp next.config.ts deploy/ || true
-          cp package.json deploy/ || true
 
       - name: Upload to server
         uses: appleboy/scp-action@v0.1.6
