@@ -32,9 +32,9 @@ export default function Filters({
   const regions = [...new Set(data.map(item => item["Country"]))];
 
   return (
-    <div className="mb-4 flex space-x-4 items-center">
+    <div className="mb-4 flex flex-col lg:flex-row lg:space-x-4 space-around lg:items-center bg-white dark:bg-gray-900 p-4 rounded-xl">
       {/* Region Filter */}
-      <div>
+      <div className="mb-4 lg:mb-0">
         <label className="mr-2">Filter by Region:</label>
         <select 
           className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
@@ -49,7 +49,7 @@ export default function Filters({
       </div>
 
       {/* Date Range Picker */}
-      <div>
+      <div className="flex items-start sm:items-center flex-col sm:flex-row">
         <label className="mr-2">Filter by Date Range:</label>
         <DatePicker
           selected={startDate}
