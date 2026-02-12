@@ -24,6 +24,13 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
+      - name: Assert standalone output exists
+        run: |
+          ls -la .next
+          test -f .next/standalone/server.js
+          test -d .next/static
+          echo "Standalone build OK"
+
       - name: Prepare deploy bundle
         run: |
           rm -rf deploy
@@ -31,7 +38,7 @@ jobs:
           cp -r .next/standalone/* deploy/
           mkdir -p deploy/.next
           cp -r .next/static deploy/.next/static
-          cp -r public deploy/public
+          [ -d public ] && cp -r public deploy/public || true
 
       - name: Upload to server
         uses: appleboy/scp-action@v0.1.6
