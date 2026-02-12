@@ -16,3 +16,23 @@ export interface FinancialRecord {
   "Month Name": string;
   Year: string;
 }
+
+export interface FinancialRecordWithId extends FinancialRecord {
+  id: number;
+}
+
+export interface FinancialRecordInput {
+  segment: string;
+  country: string;
+  product: string;
+  discountBand: string;
+  unitsSold: number;
+  manufacturingPrice: number;
+  salePrice: number;
+  grossSales: number;
+  discounts: number;
+  sales: number;
+  cogs: number;
+  profit: number;
+  date: string;
+}

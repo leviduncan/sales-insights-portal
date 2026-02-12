@@ -1,14 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import data from "@/financial-data.json";
+import { prisma } from "@/lib/prisma";
+import { toFinancialRecord } from "@/lib/format-record";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
   try {
-    if (!Array.isArray(data)) {
-      console.error("Error: Expected an array but got:", data);
-      return res.status(500).json([]);
-    }
+    const records = await prisma.financialRecord.findMany({
+      orderBy: { date: "asc" },
+    });
 
-    return res.status(200).json(data);
+    const formatted = records.map(toFinancialRecord);
+    return res.status(200).json(formatted);
   } catch (error) {
     console.error("API Error:", error);
     return res.status(500).json([]);
