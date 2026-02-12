@@ -35,8 +35,8 @@ jobs:
         run: |
           rm -rf deploy
           mkdir -p deploy
+          shopt -s dotglob
           cp -r .next/standalone/* deploy/
-          mkdir -p deploy/.next
           cp -r .next/static deploy/.next/static
           [ -d public ] && cp -r public deploy/public || true
 
