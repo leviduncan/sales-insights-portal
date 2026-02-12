@@ -1,10 +1,9 @@
 import React from "react";
-import { BoxPlotController, BoxPlot } from "chartjs-chart-box-and-violin-plot";
-
-
+import { BoxPlot } from "chartjs-chart-box-and-violin-plot";
+import { FinancialRecord } from "@/types/financial";
 
 interface AverageDiscountBySegmentProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {

@@ -1,25 +1,17 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { Line, Bar, Pie } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-
-interface FinancialData {
-  "Month Name": string;
-  "Country": string;
-  " Sales ": string;
-  "Profit": string;
-  " Product ": string;
-  " Discount ": string;
-}
+import { FinancialRecord } from "@/types/financial";
 
 export default function FinancialDashboard() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<FinancialRecord[]>([]);
   const [selectedRegion, setSelectedRegion] = useState("All");
 
   useEffect(() => {
     fetch("/api/financial-data") // Replace with actual API endpoint
       .then((res) => res.json())
-      .then((data: FinancialData[]) => setData(data));
+      .then((data: FinancialRecord[]) => setData(data));
   }, []);
 
   const filteredData = selectedRegion === "All" ? data : data.filter(item => item["Country"] === selectedRegion);
@@ -45,30 +37,6 @@ export default function FinancialDashboard() {
     acc[month] = (acc[month] || 0) + parseFloat(item["Profit"].replace(/[$,]/g, ""));
     return acc;
   }, {} as Record<string, number>);
-
-  const topProducts = filteredData.reduce((acc, item) => {
-    const product = item["Product"]; // Removed spaces from property name
-    const salesValue = item["Sales"]; // Extracted sales value into a variable
-
-    if (salesValue) { // Added null check
-      acc[product] = (acc[product] || 0) + parseFloat(salesValue.replace(/[$,]/g, "") ?? 0);
-    }
-
-    return acc;
-  }, {} as Record<string, number>);
-
-  const discountImpact = filteredData.reduce((acc, item) => {
-    const discountValue = item["Discount"]; // Removed spaces from property name
-    const salesValue = item["Sales"];
-
-    if (discountValue && salesValue) { // Added null checks
-      const discount = parseFloat(discountValue.replace(/[%]/g, "") ?? 0);
-      const sales = parseFloat(salesValue.replace(/[$,]/g, "") ?? 0);
-      acc.push({ discount, sales });
-    }
-
-    return acc;
-  }, [] as { discount: number, sales: number }[]);
 
   const chartData = {
     labels: Object.keys(salesByMonth),

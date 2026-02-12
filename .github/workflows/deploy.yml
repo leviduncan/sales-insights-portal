@@ -32,7 +32,7 @@ jobs:
           mkdir -p deploy/.next
           cp -r .next/static deploy/.next/static
           cp -r public deploy/public
-          cp next.config.js deploy/ || true
+          cp next.config.ts deploy/ || true
           cp package.json deploy/ || true
 
       - name: Upload to server

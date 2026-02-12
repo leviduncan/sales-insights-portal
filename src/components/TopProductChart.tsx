@@ -41,7 +41,7 @@ export default function TopProductsChart({ data }: TopProductsChartProps) {
     datasets: [
       {
         label: "Top Products by Revenue",
-        data: sortedProducts.map(([_, revenue]) => revenue) as number[],
+        data: sortedProducts.map(([, revenue]) => revenue) as number[],
         backgroundColor: "rgba(34, 197, 94, 0.6)",
         borderColor: "rgba(34, 197, 94, 1)",
         borderWidth: 2,

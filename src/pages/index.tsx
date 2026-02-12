@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FinancialRecord } from "@/types/financial";
 import '@/app/globals.css'
 import Navbar from "@/components/Navbar";
 import Filters from "@/components/Filters";
@@ -16,7 +17,7 @@ import TopProductsCard from "@/components/TopProductsCard";
 
 
 export default function FinancialDashboard() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<FinancialRecord[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -26,7 +27,7 @@ export default function FinancialDashboard() {
   useEffect(() => {
     fetch("/api/financial-data") // Replace with actual API endpoint
       .then((res) => res.json())
-      .then((data: any[]) => {
+      .then((data: FinancialRecord[]) => {
         setData(data);
         if (data.length > 0) {
           const parsedDates = data.map((item) => parseDate(item["Date"]));
@@ -71,10 +72,10 @@ export default function FinancialDashboard() {
           <TotalProfitCard data={filteredData} />
           <SalesByProduct data={filteredData} />
           <ProfitByProduct data={filteredData} />
-          <SalesChart data={filteredData.map(item => ({ ...item, Sales: item["Sales"], MonthName: item["Month Name"] }))} selectedRegion={selectedRegion} />
+          <SalesChart data={filteredData} />
           <TopProductsCard data={filteredData} />
         </div>
-        <TopProductChart data={filteredData.map(item => ({ ...item, Product: item["Product"], Sales: item["Sales"] }))} />
+        <TopProductChart data={filteredData} />
         <SalesByRegion data={filteredData} />
         <UnitsSoldOverTime data={filteredData} />
         <SalesVsProfit data={filteredData} />

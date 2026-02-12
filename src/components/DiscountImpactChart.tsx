@@ -1,8 +1,9 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
+import { FinancialRecord } from "@/types/financial";
 
 interface DiscountImpactChartProps {
-    data: any[];
+    data: FinancialRecord[];
 }
 
 export default function DiscountImpactChart({ data }: DiscountImpactChartProps) {

@@ -11,8 +11,10 @@ import {
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
+import { FinancialRecord } from "@/types/financial";
+
 interface ProfitByProductProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 function ProfitByProduct({ data }: ProfitByProductProps) {

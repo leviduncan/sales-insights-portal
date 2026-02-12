@@ -1,9 +1,10 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { FinancialRecord } from "@/types/financial";
 
 interface FiltersProps {
-  data: any[];
+  data: FinancialRecord[];
   selectedRegion: string;
   setSelectedRegion: (region: string) => void;
   startDate: Date | null;
@@ -56,8 +57,8 @@ export default function Filters({
           selectsStart
           startDate={startDate}
           endDate={endDate}
-          minDate={minDate}
-          maxDate={maxDate}
+          minDate={minDate ?? undefined}
+          maxDate={maxDate ?? undefined}
           className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
           placeholderText="Start Date"
         />
@@ -68,8 +69,8 @@ export default function Filters({
           selectsEnd
           startDate={startDate}
           endDate={endDate}
-          minDate={startDate || minDate}
-          maxDate={maxDate}
+          minDate={(startDate || minDate) ?? undefined}
+          maxDate={maxDate ?? undefined}
           className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
           placeholderText="End Date"
         />

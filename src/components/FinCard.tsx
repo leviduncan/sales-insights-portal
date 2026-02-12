@@ -1,10 +1,11 @@
 import React from "react";
 import { ArrowUp, ArrowDown } from "lucide-react";
+import { FinancialRecord } from "@/types/financial";
 
 interface CardProps {
   title: string;
-  data: any[];
-  valueKey: string;
+  data: FinancialRecord[];
+  valueKey: keyof FinancialRecord;
   currency?: boolean;
 }
 

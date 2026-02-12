@@ -1,7 +1,8 @@
 import React from "react";
+import { FinancialRecord } from "@/types/financial";
 
 interface TopProductsCardProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 function TopProductsCard({ data }: TopProductsCardProps) {
@@ -12,7 +13,7 @@ function TopProductsCard({ data }: TopProductsCardProps) {
     const salesCount = parseInt(item["Units Sold"]?.replace(/[$,]/g, "").trim() || "0", 10);
 
     // Ensure Profit is properly cleaned and converted
-    let profit = item["Profit"] ? item["Profit"].toString().trim().replace(/[$,]/g, "") : "0";
+    const profit = item["Profit"] ? item["Profit"].toString().trim().replace(/[$,]/g, "") : "0";
     let profitValue = parseFloat(profit);
 
     if (Number.isNaN(profitValue)) {

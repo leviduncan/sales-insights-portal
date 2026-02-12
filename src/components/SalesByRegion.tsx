@@ -1,8 +1,9 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { FinancialRecord } from "@/types/financial";
 
 interface SalesByRegionProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 export default function SalesByRegion({ data }: SalesByRegionProps) {

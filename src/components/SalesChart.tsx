@@ -1,8 +1,9 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import { FinancialRecord } from "@/types/financial";
 
 interface SalesChartProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 export default function SalesChart({ data }: SalesChartProps) {
