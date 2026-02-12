@@ -10,11 +10,11 @@ export default function SalesByProduct({ data }: SalesByProductProps) {
   const salesByProduct = data.reduce((acc, item) => {
     const product = item["Product"];
     const salesValue = item["Sales"]?.replace(/[$,]/g, "");
-    
+
     if (salesValue) {
       acc[product] = (acc[product] || 0) + parseFloat(salesValue);
     }
-    
+
     return acc;
   }, {} as Record<string, number>);
 
@@ -31,5 +31,5 @@ export default function SalesByProduct({ data }: SalesByProductProps) {
     ],
   };
 
-  return <div className="row-span-2 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Pie data={chartData} /></div>;
+  return <div className="row-span-2 bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Pie data={chartData} /></div>;
 }
