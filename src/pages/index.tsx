@@ -84,3 +84,4 @@ export default function FinancialDashboard() {
     </div>
   );
 }
+// Just a quick note - nothing to see here...
