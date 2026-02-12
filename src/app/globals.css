@@ -38,3 +38,8 @@ body {
 .hover\:text-dark:hover {
   color: var(--color-hover-text);
 }
+
+.bg-color-op {
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: .5;
+}
