@@ -15,6 +15,7 @@ import TotalIncomeCard from "@/components/TotalIncomeCard";
 import TotalProfitCard from "@/components/TotalProfitCard";
 import TopProductsCard from "@/components/TopProductsCard";
 import Branch from "@/components/Branch";
+import GridLayout from "@/components/GridLayout";
 
 
 export default function FinancialDashboard() {
@@ -72,7 +73,8 @@ export default function FinancialDashboard() {
           minDate={minDate}
           maxDate={maxDate}
         />
-        <div className="grid grid-cols-5 grid-rows-5 gap-4">
+        {/* <GridLayout data={filteredData} /> */}
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <TotalIncomeCard data={filteredData} />
           <TotalProfitCard data={filteredData} />
           <SalesByProduct data={filteredData} />
