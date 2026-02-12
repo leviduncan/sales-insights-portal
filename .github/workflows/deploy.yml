@@ -28,12 +28,9 @@ jobs:
         run: |
           rm -rf deploy
           mkdir -p deploy
-          # Standalone runtime (contains server.js and its minimal node_modules)
           cp -r .next/standalone/* deploy/
-          # Static assets required at runtime
           mkdir -p deploy/.next
           cp -r .next/static deploy/.next/static
-          # Public folder
           cp -r public deploy/public
 
       - name: Upload to server
