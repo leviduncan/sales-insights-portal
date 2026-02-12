@@ -59,7 +59,7 @@ export default function FinancialDashboard() {
   return (
     <div className="min-h-screen bg-gray-100 text-dark dark:bg-dark dark:text-light">
       <Navbar />
-      {branch_flag && <Branch branch="QA" />}
+      {branch_flag && <Branch branch={branch_flag} />}
       <div className="max-w-8x1 mx-auto p-5">
         <Filters
           data={data}
