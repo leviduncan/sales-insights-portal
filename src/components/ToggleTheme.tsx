@@ -6,7 +6,7 @@ export default function ToggleTheme() {
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
-  
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -14,10 +14,10 @@ export default function ToggleTheme() {
       document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
-  
+
   return (
     <button
-      className="bg-green-500 text-white p-2 rounded-lg"
+      className="bg-green-500 text-white p-2 rounded-full"
       onClick={toggleTheme}
     >
       Toggle Theme

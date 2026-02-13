@@ -15,13 +15,13 @@ interface FiltersProps {
   maxDate: Date | null;
 }
 
-export default function Filters({ 
-  data, 
-  selectedRegion, 
-  setSelectedRegion, 
-  startDate, 
-  setStartDate, 
-  endDate, 
+export default function Filters({
+  data,
+  selectedRegion,
+  setSelectedRegion,
+  startDate,
+  setStartDate,
+  endDate,
   setEndDate,
   minDate,
   maxDate
@@ -36,8 +36,8 @@ export default function Filters({
       {/* Region Filter */}
       <div className="mb-4 lg:mb-0">
         <label className="mr-2">Filter by Region:</label>
-        <select 
-          className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
+        <select
+          className="border p-2 bg-gray-100 text-secondary dark:bg-dark rounded-full"
           onChange={(e) => setSelectedRegion(e.target.value)}
           value={selectedRegion}
         >
@@ -59,7 +59,7 @@ export default function Filters({
           endDate={endDate}
           minDate={minDate ?? undefined}
           maxDate={maxDate ?? undefined}
-          className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
+          className="border p-2 bg-gray-100 text-secondary dark:bg-dark rounded-full"
           placeholderText="Start Date"
         />
         <span className="mx-2  text-secondary ">to</span>
@@ -71,7 +71,7 @@ export default function Filters({
           endDate={endDate}
           minDate={(startDate || minDate) ?? undefined}
           maxDate={maxDate ?? undefined}
-          className="border p-2 bg-white text-secondary dark:bg-dark rounded-lg"
+          className="border p-2 bg-gray-100 text-secondary dark:bg-dark rounded-full"
           placeholderText="End Date"
         />
       </div>

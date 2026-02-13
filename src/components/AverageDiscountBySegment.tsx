@@ -10,12 +10,12 @@ function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {
   const discountBySegment = data.reduce((acc, item) => {
     const segment = item["Segment"];
     const discountValue = item["Discounts"]?.replace(/[%]/g, "");
-    
+
     if (discountValue) {
       if (!acc[segment]) acc[segment] = [];
       acc[segment].push(parseFloat(discountValue));
     }
-    
+
     return acc;
   }, {} as Record<string, number[]>);
 
@@ -29,7 +29,7 @@ function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {
     ],
   };
 
-  return <div className="bg-gray-800 p-4 rounded-lg">BP<BoxPlot data={chartData} /></div>;
+  return <div className="bg-gray-800 p-4 rounded-full">BP<BoxPlot data={chartData} /></div>;
 }
 
 export default AverageDiscountBySegment
