@@ -31,5 +31,5 @@ export default function UnitsSoldOverTime({ data }: UnitsSoldOverTimeProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Line data={chartData} /></div>;
+  return <div className="col-span-4 xl:col-span-2 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Line data={chartData} /></div>;
 }

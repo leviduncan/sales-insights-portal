@@ -73,19 +73,20 @@ export default function FinancialDashboard() {
           maxDate={maxDate}
         />
         {/* <GridLayout data={filteredData} /> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-[250px] gap-4">
           <TotalIncomeCard data={filteredData} />
           <TotalProfitCard data={filteredData} />
-          <SalesByProduct data={filteredData} />
           <ProfitByProduct data={filteredData} />
           <SalesChart data={filteredData} />
+          <SalesByProduct data={filteredData} />
+          <TopProductChart data={filteredData} />
           <TopProductsCard data={filteredData} />
+
+          <SalesByRegion data={filteredData} />
+          <UnitsSoldOverTime data={filteredData} />
+          <SalesVsProfit data={filteredData} />
+          <COGSVS data={filteredData} />
         </div>
-        <TopProductChart data={filteredData} />
-        <SalesByRegion data={filteredData} />
-        <UnitsSoldOverTime data={filteredData} />
-        <SalesVsProfit data={filteredData} />
-        <COGSVS data={filteredData} />
       </div>
     </div>
   );

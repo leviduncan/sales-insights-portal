@@ -49,5 +49,5 @@ export default function TopProductsChart({ data }: TopProductsChartProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Bar data={chartData} /></div>;
+  return <div className="col-span-4 sm:col-span-2 xl:col-span-3 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Bar data={chartData} /></div>;
 }
