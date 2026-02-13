@@ -42,12 +42,12 @@ export default function FinCard({ title, data, valueKey, currency = true }: Card
     date.toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" });
 
   return (
-    <div className="col-span-4 lg:col-span-1 lg:row-span-1 border-dark p-4 rounded-3xl shadow-sm bg-white text-dark dark:bg-gray-900 dark:text-light">
-      <h3 className="text-secondary text-sm">{title}</h3>
-      <p className="text-2xl font-bold">
+    <div className="flex flex-col justify-center col-span-4 lg:col-span-1 lg:row-span-1 border-dark p-4 rounded-3xl shadow-sm dark:bg-white dark:text-dark bg-gray-900 text-light">
+      <h3 className="text-secondary text-lg">{title}</h3>
+      <p className="text-4xl 2xl:text-5xl  font-bold">
         {currency ? `$${currentValue.toFixed(2)}` : currentValue.toFixed(2)}
       </p>
-      <div className="flex items-center mt-1">
+      <div className="flex justify-start mt-1">
         {percentageChange >= 0 ? (
           <ArrowUp className="text-green-500 w-4 h-4" />
         ) : (
