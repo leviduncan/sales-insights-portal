@@ -9,6 +9,7 @@ A financial analytics dashboard with full CRUD capabilities, built with Next.js.
 - **CRUD Management** — Create, read, update, and delete financial records via a paginated management interface
 - **Auto-Calculated Fields** — Gross Sales, Sales, and Profit auto-compute from input values when creating or editing records
 - **Authentication** — NextAuth.js credentials-based auth protects write operations; read access remains public
+- **User Management** — Admin interface to create and list application users with secure password hashing
 - **Dark/Light Mode** — Theme toggle with full Tailwind CSS dark mode support
 - **Standalone Deployment** — Automated CI/CD via GitHub Actions with SCP to a VPS, managed by systemd and Caddy
 
@@ -75,7 +76,7 @@ This creates the tables and seeds ~1,766 financial records plus an admin user fr
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the dashboard and [http://localhost:3000/manage](http://localhost:3000/manage) for record management (requires login).
+Open [http://localhost:3000](http://localhost:3000) for the dashboard, [http://localhost:3000/manage](http://localhost:3000/manage) for record management, and [http://localhost:3000/users](http://localhost:3000/users) for user management (both require login).
 
 ## Deployment Notes
 
@@ -139,6 +140,13 @@ These endpoints require a valid session (return `401` if unauthenticated).
 | `POST` | `/api/records` | Create a new financial record |
 | `PUT` | `/api/records/:id` | Update an existing record |
 | `DELETE` | `/api/records/:id` | Delete a record |
+
+### User Management (Authenticated)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/users` | List all users (id, username, createdAt) |
+| `POST` | `/api/users` | Create a new user (username + password, min 8 chars) |
 
 ### Auth
 
