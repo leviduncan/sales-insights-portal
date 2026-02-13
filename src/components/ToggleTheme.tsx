@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
 export default function ToggleTheme() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,11 +17,8 @@ export default function ToggleTheme() {
   }, [isDarkMode]);
 
   return (
-    <button
-      className="bg-green-500 text-white p-2 rounded-full"
-      onClick={toggleTheme}
-    >
-      Toggle Theme
+    <button onClick={toggleTheme} className="text-2xl text-gray-600 dark:text-gray-300 hover:text-green-400 transition">
+      {isDarkMode ? <FaToggleOn /> : <FaToggleOff />}
     </button>
   );
 }

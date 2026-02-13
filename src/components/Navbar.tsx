@@ -6,7 +6,7 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <nav className="bg-white text-dark dark:bg-gray-900 dark:text-light p-4 shadow-md flex justify-between items-center">
+    <nav className="bg-white text-dark dark:bg-gray-900 dark:text-light p-4 shadow-md flex justify-between items-center fixed w-full z-[100]">
       <Link href="/" className="text-2xl font-bold text-green-400">
         Sales Insights Portal
       </Link>
