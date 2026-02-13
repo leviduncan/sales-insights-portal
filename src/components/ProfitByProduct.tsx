@@ -50,7 +50,7 @@ function ProfitByProduct({ data }: ProfitByProductProps) {
     ],
   };
 
-  return <div className="col-start-3 row-start-3 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
+  return <div className="col-span-4 lg:col-span-1 lg:row-span-1 bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm">
     <Bar data={chartData} />
   </div>;
 }

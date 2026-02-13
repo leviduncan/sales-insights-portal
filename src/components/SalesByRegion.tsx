@@ -10,11 +10,11 @@ export default function SalesByRegion({ data }: SalesByRegionProps) {
   const salesByRegion = data.reduce((acc, item) => {
     const region = item["Country"];
     const salesValue = item["Sales"]?.replace(/[$,]/g, "");
-    
+
     if (salesValue) {
       acc[region] = (acc[region] || 0) + parseFloat(salesValue);
     }
-    
+
     return acc;
   }, {} as Record<string, number>);
 
@@ -31,5 +31,5 @@ export default function SalesByRegion({ data }: SalesByRegionProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Bar data={chartData} /></div>;
+  return <div className="col-span-4 xl:col-span-2 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Bar data={chartData} /></div>;
 }

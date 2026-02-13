@@ -10,11 +10,11 @@ export default function UnitsSoldOverTime({ data }: UnitsSoldOverTimeProps) {
   const unitsSoldByMonth = data.reduce((acc, item) => {
     const month = item["Month Name"];
     const unitsValue = item["Units Sold"]?.replace(/[$,]/g, "");
-    
+
     if (unitsValue) {
       acc[month] = (acc[month] || 0) + parseFloat(unitsValue);
     }
-    
+
     return acc;
   }, {} as Record<string, number>);
 
@@ -31,5 +31,5 @@ export default function UnitsSoldOverTime({ data }: UnitsSoldOverTimeProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Line data={chartData} /></div>;
+  return <div className="col-span-4 xl:col-span-2 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Line data={chartData} /></div>;
 }
