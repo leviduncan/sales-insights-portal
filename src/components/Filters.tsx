@@ -32,7 +32,7 @@ export default function Filters({
   const regions = [...new Set(data.map(item => item["Country"]))];
 
   return (
-    <div className="mb-4 flex flex-col lg:flex-row lg:space-x-4 space-around lg:items-center shadow-sm bg-white dark:bg-gray-900 p-4 rounded-3xl">
+    <div className="mb-4 flex flex-col lg:flex-row lg:space-x-4 space-around lg:items-center shadow-sm bg-white dark:bg-gray-900 p-4 rounded-full">
       {/* Region Filter */}
       <div className="mb-4 lg:mb-0">
         <label className="mr-2">Filter by Region:</label>
