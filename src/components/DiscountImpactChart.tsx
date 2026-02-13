@@ -46,7 +46,7 @@ export default function DiscountImpactChart({ data }: DiscountImpactChartProps) 
 
     return (
         <div className="bg-gray-800 p-4 rounded-lg">
-            <Scatter data={chartData} />
+           <Scatter data={chartData} />
         </div>
     );
 }

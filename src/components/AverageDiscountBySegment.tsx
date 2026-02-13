@@ -29,7 +29,7 @@ function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {
     ],
   };
 
-  return <div className="bg-gray-800 p-4 rounded-lg"><BoxPlot data={chartData} /></div>;
+  return <div className="bg-gray-800 p-4 rounded-lg">BP<BoxPlot data={chartData} /></div>;
 }
 
 export default AverageDiscountBySegment

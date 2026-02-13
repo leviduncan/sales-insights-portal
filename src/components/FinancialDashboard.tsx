@@ -60,7 +60,7 @@ export default function FinancialDashboard() {
 
   return (
     <div className="p-5">
-      <h1 className="text-2xl font-bold mb-4">FinSight Analytics</h1>
+      <h1 className="text-2xl font-bold mb-4">Sales Insights Portal</h1>
       <div className="mb-4">
         <label className="mr-2">Filter by Region:</label>
         <select
