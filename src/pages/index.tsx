@@ -14,7 +14,6 @@ import TotalIncomeCard from "@/components/TotalIncomeCard";
 import TotalProfitCard from "@/components/TotalProfitCard";
 import TopProductsCard from "@/components/TopProductsCard";
 import Branch from "@/components/Branch";
-import GridLayout from "@/components/GridLayout";
 
 
 export default function FinancialDashboard() {
