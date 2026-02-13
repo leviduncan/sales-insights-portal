@@ -19,6 +19,12 @@ export default function Navbar() {
             >
               Manage
             </Link>
+            <Link
+              href="/users"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-green-400 transition"
+            >
+              Users
+            </Link>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
               className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-red-400 transition"
