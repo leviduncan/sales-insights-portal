@@ -71,7 +71,7 @@ export default function RecordFormModal({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-full shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <h3 className="text-xl font-bold text-green-400 mb-4">
             {isEditing ? "Edit Record" : "New Record"}
@@ -273,7 +273,7 @@ export default function RecordFormModal({
                 disabled={saving}
                 className="px-4 py-2 text-sm rounded bg-green-500 hover:bg-green-600 text-white font-semibold transition disabled:opacity-50"
               >
-                {saving ? "Saving..." : isEditing ? "Update" : "Create"}
+                {saving ? "Saving..." : isEditing ? "Update" : "Create New Record"}
               </button>
             </div>
           </form>
