@@ -1,8 +1,9 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
+import { FinancialRecord } from "@/types/financial";
 
 interface DiscountImpactChartProps {
-    data: any[];
+    data: FinancialRecord[];
 }
 
 export default function DiscountImpactChart({ data }: DiscountImpactChartProps) {
@@ -45,7 +46,7 @@ export default function DiscountImpactChart({ data }: DiscountImpactChartProps) 
 
     return (
         <div className="bg-gray-800 p-4 rounded-lg">
-            <Scatter data={chartData} />
+           <Scatter data={chartData} />
         </div>
     );
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import { ArrowUp, ArrowDown } from "lucide-react";
 import FinCard from "./FinCard";
+import { FinancialRecord } from "@/types/financial";
 
-export default function TotalProfitCard({ data }) {
+export default function TotalProfitCard({ data }: { data: FinancialRecord[] }) {
 
   return (
     <FinCard title="Total Profit" data={data} valueKey="Profit" />

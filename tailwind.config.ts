@@ -11,14 +11,14 @@ module.exports = {
         light: "#F3F4F6",
       },
     },
-    backgroundColor: (theme) => ({
+    backgroundColor: ({ theme }: { theme: (path: string) => Record<string, string> }) => ({
       ...theme('colors'),
       primary: '#22C55E',
       secondary: '#F3F4F6',
       dark: '#1E293B',
       light: '#F7FAFC',
     }),
-    textColor: (theme) => ({
+    textColor: ({ theme }: { theme: (path: string) => Record<string, string> }) => ({
       ...theme('colors'),
       primary: '#22C55E',
       secondary: '#bbbbbb',

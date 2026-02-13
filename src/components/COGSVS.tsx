@@ -1,8 +1,9 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
+import { FinancialRecord } from "@/types/financial";
 
 interface COGSVSProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 export default function COGSVS({ data }: COGSVSProps) {
@@ -30,5 +31,5 @@ export default function COGSVS({ data }: COGSVSProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Scatter data={chartData} /></div>;
+  return <div className="col-span-4 xl:col-span-2 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Scatter data={chartData} /></div>;
 }

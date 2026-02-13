@@ -1,10 +1,11 @@
 import React from "react";
 import { ArrowUp, ArrowDown } from "lucide-react";
+import { FinancialRecord } from "@/types/financial";
 
 interface CardProps {
   title: string;
-  data: any[];
-  valueKey: string;
+  data: FinancialRecord[];
+  valueKey: keyof FinancialRecord;
   currency?: boolean;
 }
 
@@ -41,7 +42,7 @@ export default function FinCard({ title, data, valueKey, currency = true }: Card
     date.toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" });
 
   return (
-    <div className="border-dark p-4 rounded-lg shadow-sm bg-white text-dark dark:bg-gray-900 dark:text-light mb-2">
+    <div className="col-span-4 lg:col-span-1 lg:row-span-1 border-dark p-4 rounded-3xl shadow-sm bg-white text-dark dark:bg-gray-900 dark:text-light">
       <h3 className="text-secondary text-sm">{title}</h3>
       <p className="text-2xl font-bold">
         {currency ? `$${currentValue.toFixed(2)}` : currentValue.toFixed(2)}
@@ -53,9 +54,8 @@ export default function FinCard({ title, data, valueKey, currency = true }: Card
           <ArrowDown className="text-red-500 w-4 h-4" />
         )}
         <span
-          className={`ml-1 text-sm ${
-            percentageChange >= 0 ? "text-green-500" : "text-red-500"
-          }`}
+          className={`ml-1 text-sm ${percentageChange >= 0 ? "text-green-500" : "text-red-500"
+            }`}
         >
           {percentageChange.toFixed(2)}% Compared to last month
         </span>

@@ -41,7 +41,7 @@ export default function TopProductsChart({ data }: TopProductsChartProps) {
     datasets: [
       {
         label: "Top Products by Revenue",
-        data: sortedProducts.map(([_, revenue]) => revenue) as number[],
+        data: sortedProducts.map(([, revenue]) => revenue) as number[],
         backgroundColor: "rgba(34, 197, 94, 0.6)",
         borderColor: "rgba(34, 197, 94, 1)",
         borderWidth: 2,
@@ -49,5 +49,5 @@ export default function TopProductsChart({ data }: TopProductsChartProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Bar data={chartData} /></div>;
+  return <div className="col-span-4 sm:col-span-2 xl:col-span-3 xl:row-span-2  bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Bar data={chartData} /></div>;
 }

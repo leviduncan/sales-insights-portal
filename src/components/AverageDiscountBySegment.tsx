@@ -1,10 +1,9 @@
 import React from "react";
-import { BoxPlotController, BoxPlot } from "chartjs-chart-box-and-violin-plot";
-
-
+import { BoxPlot } from "chartjs-chart-box-and-violin-plot";
+import { FinancialRecord } from "@/types/financial";
 
 interface AverageDiscountBySegmentProps {
-  data: any[];
+  data: FinancialRecord[];
 }
 
 function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {
@@ -30,7 +29,7 @@ function AverageDiscountBySegment({ data }: AverageDiscountBySegmentProps) {
     ],
   };
 
-  return <div className="bg-gray-800 p-4 rounded-lg"><BoxPlot data={chartData} /></div>;
+  return <div className="bg-gray-800 p-4 rounded-lg">BP<BoxPlot data={chartData} /></div>;
 }
 
 export default AverageDiscountBySegment
