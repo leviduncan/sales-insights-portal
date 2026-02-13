@@ -45,15 +45,14 @@ function TopProductsCard({ data }: TopProductsCardProps) {
     date.toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" });
 
   return (
-    <div className="col-span-2 row-start-4 bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
+    <div className="col-span-2 row-start-4 bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm">
       <h3 className="text-gray-500 text-sm">Top Products Performance</h3>
       <div className="mt-3">
         {sortedProducts.map(([product, stats], index) => (
           <div
             key={product}
-            className={`flex justify-between py-2 border-b last:border-none ${
-              index === 0 ? "text-green-500 font-bold" : "text-gray-300"
-            }`}
+            className={`flex justify-between py-2 border-b last:border-none ${index === 0 ? "text-green-500 font-bold" : "text-gray-300"
+              }`}
           >
             <span className="text-sm">{product}</span>
             <div className="text-sm flex space-x-4">

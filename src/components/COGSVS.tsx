@@ -31,5 +31,5 @@ export default function COGSVS({ data }: COGSVSProps) {
     ],
   };
 
-  return <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"><Scatter data={chartData} /></div>;
+  return <div className="bg-white dark:bg-gray-900 p-4 rounded-3xl shadow-sm"><Scatter data={chartData} /></div>;
 }

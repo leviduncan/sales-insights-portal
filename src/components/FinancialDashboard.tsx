@@ -74,7 +74,7 @@ export default function FinancialDashboard() {
           ))}
         </select>
       </div>
-      <div className="chart-container bg-white p-4 rounded-lg shadow-lg">
+      <div className="chart-container bg-white p-4 rounded-3xl shadow-lg">
         <Line data={chartData} />
       </div>
     </div>
