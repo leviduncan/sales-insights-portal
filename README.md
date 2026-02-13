@@ -29,7 +29,20 @@ A financial analytics dashboard with full CRUD capabilities, built with Next.js.
 
 ## Screenshots
 
-*Coming soon*
+![Sales Insights Portal](./assets/dashboard.png)
+
+![Sign-in](./assets/sign-in.png)
+
+![User List](./assets/user-list.png)
+
+![Manage Records](./assets/manage-records.png)
+
+![Delete Record](./assets/delete-record.png)
+
+![Create New User](./assets/create-new-user.png)
+
+![Create New Record](./assets/create-new-record.png)
+
 
 ## Local Run Steps
 
