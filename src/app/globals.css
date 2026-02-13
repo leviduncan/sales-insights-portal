@@ -43,3 +43,9 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: .5;
 }
+
+select, input, button {
+  border-radius: 100px !important;
+  border: 0px;
+  padding: 10px !important;
+}

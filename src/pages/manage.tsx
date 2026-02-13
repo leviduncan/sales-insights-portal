@@ -119,7 +119,7 @@ export default function ManagePage() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Navbar />
       <div className="max-w-7xl mx-auto p-6">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 mt-20">
           <div>
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
               Manage Records
@@ -136,7 +136,7 @@ export default function ManagePage() {
           </button>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-x-auto">
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>

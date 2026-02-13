@@ -53,7 +53,7 @@ export default function UserFormModal({ onSave, onClose }: UserFormModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-sm p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl w-full max-w-sm p-6">
         <h3 className="text-xl font-bold text-green-400 mb-4">New User</h3>
 
         {error && (
